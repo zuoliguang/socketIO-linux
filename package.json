@@ -1,0 +1,8 @@
+{
+    "name":"socketio_example",
+    "version":"4.13.2",
+    "private":true,
+    "dependencies":{
+        "socket.io":"1.4.5"
+    }
+}
