@@ -15,17 +15,24 @@
     <script src="/socket.io/socket.io.js"></script>
 
     <script>
-      var socket = io.connect('http://192.168.147.130:8000');
+      var socket = io.connect('http://192.168.147.131:8000');
+
       var message = document.getElementById('message');
       $(message.form).submit(function() {
-        socket.emit('message', { text: message.value });
+        socket.emit('broadcast', { text: message.value });
         return false;
       });
-      socket.on('push message', function (data) {
-        $('form').after('<p>' + data.text + '</p>');
+
+// 针对 test_news 后台推送
+      socket.on('test_news', function (data) {
+        console.log(data);
       });
-    </script>
+
+// 广播信息
+      socket.on('broadnews', function(data){
+        console.log(data);
+      });
+
+   </script>
   </body>
 </html>
-
-
