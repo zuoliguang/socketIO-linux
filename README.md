@@ -3,7 +3,7 @@
 ## 安装:<br>
 * 1、保证安装了 node 
 * 2、该目录下执行 npm install 
-* 3、运行文件 node app.js 访问 index.html 位置即可
+* 3、运行文件 node app.js 访问 index.html 位置即可 记得防火墙打开8000的端口; 
 * 4、客户端可使用:
   <pre><code>
   <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script><br>
