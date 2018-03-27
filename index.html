@@ -5,7 +5,9 @@
     <title>Socket.IO Example</title>
   </head>
   <body>
+
     <h1>Socket.IO Example</h1>
+    
     <form id="message-form" action="#">
       <textarea id="message" rows="4" cols="30"></textarea>
       <input type="submit" value="Send message" />
@@ -19,16 +21,18 @@
 
       var message = document.getElementById('message');
       $(message.form).submit(function() {
+
+// 向广播器发送信息
         socket.emit('broadcast', { text: message.value });
         return false;
       });
 
-// 针对 test_news 后台推送
+// 针对 test_news 频道 推送消息
       socket.on('test_news', function (data) {
         console.log(data);
       });
 
-// 广播信息
+// 接收广播信息
       socket.on('broadnews', function(data){
         console.log(data);
       });
